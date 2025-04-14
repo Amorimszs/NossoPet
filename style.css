@@ -1,0 +1,49 @@
+/* Resetando as margens e preenchimentos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo o layout da página */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Definindo a altura para 100% da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f7fa; /* Cor suave para o fundo */
+}
+
+/* Container para centralizar o conteúdo */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo da logo */
+.logo img {
+    width: 200px; /* Defina o tamanho adequado da sua logo */
+    height: auto;
+    margin-bottom: 30px; /* Espaçamento entre a logo e o botão */
+}
+
+/* Estilo do botão */
+.btn-comecar {
+    background-color: #00796b; /* Cor de fundo do botão */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover para o botão */
+.btn-comecar:hover {
+    background-color: #004d40; /* Cor ao passar o mouse por cima */
+}
