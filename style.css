@@ -17,32 +17,110 @@ body {
 
 /* Container principal */
 .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Content principal */
-.content {
-    text-align: center;
+    background-color: #333; /* Fundo mais claro para o formulário */
     color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;/* Resetando as margens e preenchimentos padrões */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Definindo o layout da página */
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh; /* Definindo a altura para 100% da tela */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2e2e2e; /* Fundo preto acinzentado */
+    }
+    
+    /* Container principal */
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Content principal */
+    .content {
+        text-align: center;
+        color: white;
+    }
+    
+    /* Logo */
+    .logo {
+        max-width: 200px; /* Limita o tamanho da logo */
+        margin-bottom: 30px; /* Espaço entre a logo e o botão */
+    }
+    
+    /* Estilo do botão Começar */
+    .btn-comecar {
+        background-color: #9c27b0; /* Botão roxo */
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Efeito de hover para o botão */
+    .btn-comecar:hover {
+        background-color: #7b1fa2; /* Cor do botão ao passar o mouse */
+    }
+    
 }
 
-/* Logo */
-.logo {
-    max-width: 200px; /* Limita o tamanho da logo */
-    margin-bottom: 30px; /* Espaço entre a logo e o botão */
+/* Título da página */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #9c27b0; /* Cor roxa */
 }
 
-/* Estilo do botão Começar */
-.btn-comecar {
+/* Estilo do formulário */
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo dos campos de input */
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9c27b0;
+    border-radius: 5px;
+    background-color: #444; /* Fundo escuro para os campos */
+    color: white;
+    font-size: 16px;
+}
+
+/* Estilo do botão de cadastrar */
+.btn-cadastrar {
     background-color: #9c27b0; /* Botão roxo */
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 15px 30px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -50,6 +128,6 @@ body {
 }
 
 /* Efeito de hover para o botão */
-.btn-comecar:hover {
+.btn-cadastrar:hover {
     background-color: #7b1fa2; /* Cor do botão ao passar o mouse */
 }
