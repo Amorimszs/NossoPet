@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e0f7fa; /* Cor suave para o fundo */
+    background-color: #2e2e2e; /* Fundo preto acinzentado */
 }
 
 /* Container para centralizar o conteúdo */
@@ -25,25 +25,26 @@ body {
 
 /* Estilo da logo */
 .logo img {
-    width: 200px; /* Defina o tamanho adequado da sua logo */
+    width: 200px; /* Tamanho da logo */
     height: auto;
     margin-bottom: 30px; /* Espaçamento entre a logo e o botão */
 }
 
 /* Estilo do botão */
 .btn-comecar {
-    background-color: #00796b; /* Cor de fundo do botão */
+    background-color: #9c27b0; /* Cor roxa do botão */
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
-    padding: 15px 30px;
+    padding: 20px 40px;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 30px;
 }
 
 /* Efeito de hover para o botão */
 .btn-comecar:hover {
-    background-color: #004d40; /* Cor ao passar o mouse por cima */
+    background-color: #7b1fa2; /* Cor ao passar o mouse por cima */
 }
