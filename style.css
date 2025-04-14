@@ -105,3 +105,38 @@ body {
 .btn-cadastrar:hover {
     background-color: #7b1fa2; /* Cor do botão ao passar o mouse */
 }
+.tela-passeadores .container {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .passeador-card {
+    background-color: #444;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .passeador-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .passeador-card button {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .passeador-card button:hover {
+    background-color: #7b1fa2;
+  }
+  
