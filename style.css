@@ -15,36 +15,64 @@ body {
     background-color: #2e2e2e; /* Fundo preto acinzentado */
 }
 
-/* Container para centralizar o conteúdo */
+/* Container principal */
 .container {
+    background-color: #333; /* Fundo mais claro para o formulário */
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Título da página */
+h1 {
     text-align: center;
+    margin-bottom: 30px;
+    color: #9c27b0; /* Cor roxa */
+}
+
+/* Estilo do formulário */
+.form-cadastro {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-/* Estilo da logo */
-.logo img {
-    width: 200px; /* Tamanho da logo */
-    height: auto;
-    margin-bottom: 30px; /* Espaçamento entre a logo e o botão */
+/* Estilo dos campos de input */
+.campo {
+    margin-bottom: 15px;
 }
 
-/* Estilo do botão */
-.btn-comecar {
-    background-color: #9c27b0; /* Cor roxa do botão */
+.campo label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9c27b0;
+    border-radius: 5px;
+    background-color: #444; /* Fundo escuro para os campos */
     color: white;
-    font-size: 22px;
+    font-size: 16px;
+}
+
+/* Estilo do botão de cadastrar */
+.btn-cadastrar {
+    background-color: #9c27b0; /* Botão roxo */
+    color: white;
+    font-size: 18px;
     font-weight: bold;
-    padding: 20px 40px;
+    padding: 15px;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 30px;
 }
 
 /* Efeito de hover para o botão */
-.btn-comecar:hover {
-    background-color: #7b1fa2; /* Cor ao passar o mouse por cima */
+.btn-cadastrar:hover {
+    background-color: #7b1fa2; /* Cor do botão ao passar o mouse */
 }
