@@ -1,100 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadastro - NossoPet</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - NossoPet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="segunda-tela">
-  <div class="container">
-    <h1>Cadastro</h1>
-    <form class="form-cadastro" onsubmit="validarCadastro(event)">
-      <div class="campo">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" required>
-      </div>
-      <div class="campo">
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" required>
-      </div>
-      <div class="campo">
-        <label for="numero">Telefone:</label>
-        <input type="text" id="numero" name="numero" required>
-      </div>
-      <div class="campo">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="campo">
-        <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="date" id="data_nascimento" name="data_nascimento" required>
-      </div>
-      <div class="campo">
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-      </div>
-      <div class="campo">
-        <label for="confirmar_senha">Confirmar Senha:</label>
-        <input type="password" id="confirmar_senha" name="confirmar_senha" required>
-      </div>
-      <button type="submit" class="btn-cadastrar">Cadastrar</button>
-    </form>
-  </div>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form class="form-cadastro" onsubmit="return validarFormulario(event)">
+            <div class="campo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span id="erro-nome" style="color: red; display: none;">Nome não pode conter números.</span>
+            </div>
+            <div class="campo">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div class="campo">
+                <label for="numero">Telefone:</label>
+                <input type="text" id="numero" name="numero" required>
+                <span id="erro-telefone" style="color: red; display: none;">Telefone deve ter 13 números.</span>
+            </div>
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="erro-email" style="color: red; display: none;">Email deve ser válido (ex: gmail, outlook, hotmail).</span>
+            </div>
+            <div class="campo">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required>
+                <span id="erro-nascimento" style="color: red; display: none;">Você precisa ter entre 18 e 100 anos.</span>
+            </div>
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="campo">
+                <label for="confirmar-senha">Confirmar Senha:</label>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                <span id="erro-senha" style="color: red; display: none;">As senhas não coincidem.</span>
+            </div>
+            <button type="submit" class="btn-cadastrar">Cadastrar</button>
+        </form>
+    </div>
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault(); // Impede o envio do formulário se houver erro
 
-  <script>
-    function validarCadastro(event) {
-      event.preventDefault();
+            // Limpa os erros
+            limparErros();
 
-      const nome = document.getElementById("nome").value.trim();
-      const telefone = document.getElementById("numero").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const dataNascimento = document.getElementById("data_nascimento").value;
-      const senha = document.getElementById("senha").value;
-      const confirmarSenha = document.getElementById("confirmar_senha").value;
+            let valido = true;
 
-      // Nome não pode conter números
-      if (/\d/.test(nome)) {
-        alert("O nome não pode conter números.");
-        return;
-      }
+            // Validação do nome
+            const nome = document.getElementById('nome').value;
+            if (/\d/.test(nome)) {
+                document.getElementById('erro-nome').style.display = 'block';
+                valido = false;
+            }
 
-      // Telefone: apenas números e 13 dígitos
-      if (!/^\d{13}$/.test(telefone)) {
-        alert("O telefone deve conter exatamente 13 dígitos numéricos (ex: 5544998887743).");
-        return;
-      }
+            // Validação do telefone (apenas números e 13 dígitos)
+            const telefone = document.getElementById('numero').value;
+            if (!/^\d{13}$/.test(telefone)) {
+                document.getElementById('erro-telefone').style.display = 'block';
+                valido = false;
+            }
 
-      // E-mail: deve conter @ e domínio válido
-      const emailValido = /^[a-zA-Z0-9._%+-]+@(gmail|outlook|hotmail)\.com$/;
-      if (!emailValido.test(email)) {
-        alert("Insira um e-mail válido do Gmail, Outlook ou Hotmail.");
-        return;
-      }
+            // Validação do email (verifica se contém pelo menos um @ e se é gmail, hotmail ou outlook)
+            const email = document.getElementById('email').value;
+            if (!/^[a-zA-Z0-9._%+-]+@(gmail\.com|outlook\.com|hotmail\.com)$/.test(email)) {
+                document.getElementById('erro-email').style.display = 'block';
+                valido = false;
+            }
 
-      // Validação da idade
-      const hoje = new Date();
-      const nascimento = new Date(dataNascimento);
-      const idade = hoje.getFullYear() - nascimento.getFullYear();
-      const mes = hoje.getMonth() - nascimento.getMonth();
-      if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
-        idade--;
-      }
+            // Validação da data de nascimento (18 a 100 anos)
+            const dataNascimento = new Date(document.getElementById('data_nascimento').value);
+            const idade = new Date().getFullYear() - dataNascimento.getFullYear();
+            if (idade < 18 || idade > 100) {
+                document.getElementById('erro-nascimento').style.display = 'block';
+                valido = false;
+            }
 
-      if (idade < 18 || idade > 100) {
-        alert("Você precisa ter entre 18 e 100 anos para se cadastrar.");
-        return;
-      }
+            // Validação das senhas
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmar-senha').value;
+            if (senha !== confirmarSenha) {
+                document.getElementById('erro-senha').style.display = 'block';
+                valido = false;
+            }
 
-      // Confirmação de senha
-      if (senha !== confirmarSenha) {
-        alert("As senhas não coincidem.");
-        return;
-      }
+            // Se tudo estiver correto, redireciona para a próxima tela
+            if (valido) {
+                window.location.href = "passeadores.html"; // Redireciona para a página de passeadores
+            }
 
-      // Se passou por todas as validações
-      window.location.href = "passeadores.html";
-    }
-  </script>
+            return valido; // Retorna false se alguma validação falhar, impedindo o envio do formulário
+        }
+
+        function limparErros() {
+            document.getElementById('erro-nome').style.display = 'none';
+            document.getElementById('erro-telefone').style.display = 'none';
+            document.getElementById('erro-email').style.display = 'none';
+            document.getElementById('erro-nascimento').style.display = 'none';
+            document.getElementById('erro-senha').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
