@@ -2,31 +2,204 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Passeadores Disponíveis - NossoPet</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Resetando estilos padrões */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilo da Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #9c27b0;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* Estilo do botão para abrir a sidebar */
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #9c27b0;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      position: fixed;
+      left: 20px;
+      top: 20px;
+    }
+
+    /* Estilo da área de passeadores */
+    .tela-passeadores .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px auto;
+      text-align: center;
+      margin-left: 250px; /* Para deixar o conteúdo deslocado para a direita, onde o menu ocupa espaço */
+    }
+
+    .passeador-card {
+      background-color: #444;
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .passeador-card:hover {
+      transform: scale(1.05);
+    }
+
+    .passeador-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .passeador-card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .passeador-card p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .passeador-card .avaliacao {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #ffdf00;
+    }
+
+    .passeador-card button {
+      background-color: #9c27b0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .passeador-card button:hover {
+      background-color: #7b1fa2;
+    }
+  </style>
 </head>
 <body class="tela-passeadores">
-  <div class="container">
-    <h1>Passeadores Disponíveis</h1>
 
+  <!-- Botão para abrir o menu lateral -->
+  <button class="openbtn" onclick="openNav()">☰ Menu</button>
+
+  <!-- Sidebar (Menu Lateral) -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">Início</a>
+    <a href="#">Meus Agendamentos</a>
+    <a href="#">Perfil</a>
+    <a href="#">Sair</a>
+  </div>
+
+  <!-- Conteúdo dos Passeadores -->
+  <div class="container">
     <div class="passeador-card">
-      <img src="passeador1.jpg" alt="Passeador 1">
+      <img src="passeador1.jpg" alt="Passeador 1" />
       <h2>João Silva</h2>
       <p>Experiência: 3 anos</p>
-      <p>Avaliação: ⭐⭐⭐⭐☆</p>
+      <div class="avaliacao">
+        <p>Avaliação: ⭐⭐⭐⭐☆</p>
+      </div>
+      <p>João é apaixonado por cães, com experiência em passeios e cuidados diários. Ele vai garantir o bem-estar do seu pet!</p>
       <button>Agendar com João</button>
     </div>
 
     <div class="passeador-card">
-      <img src="passeador2.jpg" alt="Passeador 2">
+      <img src="passeador2.jpg" alt="Passeador 2" />
       <h2>Mariana Costa</h2>
       <p>Experiência: 5 anos</p>
-      <p>Avaliação: ⭐⭐⭐⭐⭐</p>
+      <div class="avaliacao">
+        <p>Avaliação: ⭐⭐⭐⭐⭐</p>
+      </div>
+      <p>Mariana é uma passeadora experiente que adora animais. Ela é cuidadosa e fará o máximo para garantir que o seu pet fique feliz e seguro!</p>
       <button>Agendar com Mariana</button>
     </div>
-    
-    <!-- Adicione mais cards conforme quiser -->
+
+    <div class="passeador-card">
+      <img src="passeador3.jpg" alt="Passeador 3" />
+      <h2>Carlos Pereira</h2>
+      <p>Experiência: 2 anos</p>
+      <div class="avaliacao">
+        <p>Avaliação: ⭐⭐⭐☆☆</p>
+      </div>
+      <p>Carlos tem um ótimo relacionamento com os pets e oferece passeios tranquilos. Ele é a escolha perfeita para o seu cãozinho!</p>
+      <button>Agendar com Carlos</button>
+    </div>
+
+    <div class="passeador-card">
+      <img src="passeador4.jpg" alt="Passeador 4" />
+      <h2>Fernanda Lima</h2>
+      <p>Experiência: 4 anos</p>
+      <div class="avaliacao">
+        <p>Avaliação: ⭐⭐⭐⭐⭐</p>
+      </div>
+      <p>Fernanda ama animais e tem muita experiência com cães de diversas raças. Ela é muito confiável e dedicada!</p>
+      <button>Agendar com Fernanda</button>
+    </div>
   </div>
+
+  <!-- Scripts para abrir e fechar o menu -->
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.body.style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.body.style.marginLeft = "0";
+    }
+  </script>
 </body>
 </html>
