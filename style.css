@@ -16,12 +16,12 @@ body {
 
 /* Primeira Tela */
 .primeira-tela {
-    background-color: #2e2e2e; /* Fundo preto acinzentado */
+    background-color: #2e2e2e;
 }
 
 /* Segunda Tela */
 .segunda-tela {
-    background-color: #2e2e2e; /* Fundo preto acinzentado */
+    background-color: #2e2e2e;
 }
 
 /* Container */
@@ -35,12 +35,12 @@ body {
 /* Logo */
 .logo {
     max-width: 200px;
-    margin-bottom: 30px; /* Espaço entre a logo e o botão */
+    margin-bottom: 30px;
 }
 
 /* Estilo do botão Começar */
 .btn-comecar {
-    background-color: #9c27b0; /* Botão roxo */
+    background-color: #9c27b0;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -53,14 +53,14 @@ body {
 
 /* Efeito de hover para o botão */
 .btn-comecar:hover {
-    background-color: #7b1fa2; /* Cor do botão ao passar o mouse */
+    background-color: #7b1fa2;
 }
 
 /* Estilo do formulário de cadastro */
 .form-cadastro {
     display: flex;
     flex-direction: column;
-    background-color: #333; /* Fundo mais claro para o formulário */
+    background-color: #333;
     color: white;
     padding: 40px;
     border-radius: 10px;
@@ -83,14 +83,14 @@ body {
     padding: 10px;
     border: 1px solid #9c27b0;
     border-radius: 5px;
-    background-color: #444; /* Fundo escuro para os campos */
+    background-color: #444;
     color: white;
     font-size: 16px;
 }
 
 /* Estilo do botão de cadastrar */
 .btn-cadastrar {
-    background-color: #9c27b0; /* Botão roxo */
+    background-color: #9c27b0;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -103,40 +103,41 @@ body {
 
 /* Efeito de hover para o botão */
 .btn-cadastrar:hover {
-    background-color: #7b1fa2; /* Cor do botão ao passar o mouse */
+    background-color: #7b1fa2;
 }
+
+/* Tela de Passeadores */
 .tela-passeadores .container {
     max-width: 800px;
     margin: 40px auto;
     text-align: center;
-  }
-  
-  .passeador-card {
+}
+
+.passeador-card {
     background-color: #444;
     color: white;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
-  .passeador-card img {
+}
+
+.passeador-card img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
-  }
-  
-  .passeador-card button {
+}
+
+.passeador-card button {
     background-color: #9c27b0;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .passeador-card button:hover {
+}
+
+.passeador-card button:hover {
     background-color: #7b1fa2;
-  }
-  
+}
