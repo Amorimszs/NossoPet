@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendar com Jeferson</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="tela-agendamento">
+  <div class="container">
+    <div class="modal">
+      <img src="imagens/jeferson.jpg" class="modal-foto" alt="Jeferson">
+      <div class="modal-info">
+        <h2>Agendar com Jeferson</h2>
+        <p>Jeferson é apaixonado por cães e tem 5 anos de experiência com passeios.</p>
+      </div>
+
+      <textarea placeholder="Deixe uma observação para o passeio..."></textarea>
+
+      <!-- Campo de horários -->
+      <div class="horarios">
+        <label for="hora-inicio"><strong>Horário início:</strong></label>
+        <input type="time" id="hora-inicio" name="hora-inicio">
+
+        <label for="hora-fim"><strong>Horário fim:</strong></label>
+        <input type="time" id="hora-fim" name="hora-fim">
+      </div>
+
+      <!-- Dias da semana -->
+      <div class="dias-semana">
+        <p><strong>Selecione os dias da semana:</strong></p>
+        <label><input type="checkbox" name="dias" value="segunda"> Segunda-feira</label><br>
+        <label><input type="checkbox" name="dias" value="terca"> Terça-feira</label><br>
+        <label><input type="checkbox" name="dias" value="quarta"> Quarta-feira</label><br>
+        <label><input type="checkbox" name="dias" value="quinta"> Quinta-feira</label><br>
+        <label><input type="checkbox" name="dias" value="sexta"> Sexta-feira</label><br>
+        <label><input type="checkbox" name="dias" value="sabado"> Sábado</label><br>
+        <label><input type="checkbox" name="dias" value="domingo"> Domingo</label><br>
+      </div>
+
+      <button class="btn-confirmar">Confirmar Agendamento</button>
+    </div>
+  </div>
+</body>
+</html>

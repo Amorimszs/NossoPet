@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Pet</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #2f2f2f; /* Fundo preto acinzentado */
+      color: #fff; /* Texto em branco */
+      padding: 20px;
+    }
+
+    .header {
+      position: fixed; /* fixa no topo */
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: #3d3d3d; /* Fundo escuro para o header */
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    .header img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #9c27b0; /* Detalhe roxo */
+      margin-left: 20px;
+    }
+
+    .pet-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #9c27b0; /* Texto roxo */
+      margin-left: 20px;
+    }
+
+    .info-container {
+      margin-top: 160px; /* empurra o conteúdo para baixo */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .info-card {
+      background-color: #3d3d3d; /* Fundo escuro para os cartões */
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+      border-left: 5px solid #9c27b0; /* Detalhe roxo */
+    }
+
+    .info-card:hover {
+      transform: scale(1.03);
+    }
+
+    .info-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #9c27b0; /* Texto roxo nos títulos */
+      margin-bottom: 10px;
+    }
+
+    .info-text {
+      font-size: 16px;
+      color: #ddd; /* Texto mais claro para contraste */
+    }
+
+    /* Estilo para os níveis de comportamento */
+    .behavior-level {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .behavior-level span {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .emoji {
+      font-size: 30px;
+    }
+
+    /* Cores dos estados */
+    .happy {
+      color: green;
+    }
+
+    .sad {
+      color: blue;
+    }
+
+    .angry {
+      color: red;
+    }
+
+    .neutral {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="imagens/thor.jpg" alt="Foto do pet">
+    <div class="pet-name">Thor</div>
+  </div>
+
+  <div class="info-container">
+    <div class="info-card">
+      <div class="info-title">Idade</div>
+      <div class="info-text">3 anos</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">Doenças</div>
+      <div class="info-text">Nenhuma</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">Hobbies</div>
+      <div class="info-text">Correr no parque</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">Manias</div>
+      <div class="info-text">Pular nas pessoas</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">Horários de Passeio</div>
+      <div class="info-text">8h e 18h</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">Medicamentos</div>
+      <div class="info-text">Vitamina C</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">Comportamento</div>
+      <div class="info-text">Sociável</div>
+    </div>
+
